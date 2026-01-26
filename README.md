@@ -1,6 +1,6 @@
 # DA House Prices Prediction (LGBM, CatBoost, XGBoost)
 
-📊 A project for predicting house prices using ensemble gradient boosting models (LightGBM, CatBoost, XGBoost).
+📊 A project for predicting house prices using ensemble gradient boosting models (LightGBM, CatBoost, XGBoost).(https://github.com/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/blob/main/notebooks/House_Prices_Prediction_LGBM_CatBoost_XGBoost.ipynb)
 
 ---
 
