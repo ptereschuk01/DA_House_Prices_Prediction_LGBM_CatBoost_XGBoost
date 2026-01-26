@@ -24,6 +24,15 @@ The goal is to build a high-accuracy prediction model and document the entire ML
 -  **requirements.txt** — Python project dependencies  
 -  **.gitignore** — Git ignore file
 
+DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/
+├─ data/
+│ ├─ raw/         # Original train/test datasets
+│ └─ processed/   # Cleaned and feature-engineered datasets
+├─ notebooks/     # Jupyter notebooks with analysis and modeling
+├─ requirements.txt # Python dependencies
+├─ README.md # Project description
+└─ .gitignore
+```
 ---
 
 ## 🚀 Installation
