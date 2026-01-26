@@ -1,10 +1,10 @@
 # DA House Prices Prediction (LGBM, CatBoost, XGBoost)
 
-📊 A project for predicting house prices using ensemble gradient boosting models (LightGBM, CatBoost, XGBoost).(https://github.com/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/blob/main/notebooks/House_Prices_Prediction_LGBM_CatBoost_XGBoost.ipynb)
+ [A project for predicting house prices using ensemble gradient boosting models (LightGBM, CatBoost, XGBoost).](https://github.com/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/blob/main/notebooks/House_Prices_Prediction_LGBM_CatBoost_XGBoost.ipynb)
 
 ---
 
-## 🧠 Description
+##  Description
 
 This repository contains a complete ML project for solving a regression problem: predicting house prices. The project includes:
 
@@ -17,12 +17,12 @@ The goal is to build a high-accuracy prediction model and document the entire ML
 
 ---
 
-## 🧾 Contents
+## Contents
 
-- 📁 **data/raw/** — raw data (train/test)  
-- 📄 **notebooks/** — Jupyter notebooks with analysis, model training, and visualizations  
-- 📄 **requirements.txt** — Python project dependencies  
-- 📄 **.gitignore** — Git ignore file
+-  **data/raw/** — raw data (train/test)  
+-  **notebooks/** — Jupyter notebooks with analysis, model training, and visualizations  
+-  **requirements.txt** — Python project dependencies  
+-  **.gitignore** — Git ignore file
 
 ---
 
