@@ -27,15 +27,15 @@ The goal is to build a high-accuracy prediction model and document the entire ML
 
 ├─ data/
 
-│ ├─ raw/         # Original train/test datasets
+│   ├─ raw/         # Original train/test datasets
 
-│ └─ processed/   # Cleaned and feature-engineered datasets
+│   └─ processed/   # Cleaned and feature-engineered datasets
 
-├─ notebooks/     # Jupyter notebooks with analysis and modeling
+├─ notebooks/       # Jupyter notebooks with analysis and modeling
 
 ├─ requirements.txt # Python dependencies
 
-├─ README.md # Project description
+├─ README.md        # Project description
 
 └─ .gitignore
 ```
