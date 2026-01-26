@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠 Usage
+##  Usage
 
 Open and run notebooks in the **notebooks/** directory:
 ```bash
@@ -67,25 +67,13 @@ Workflow steps:
 
 ---
 
-## 📊 Model Comparison
+##  Model Comparison
 
 | Model      | RMSE   | R²     |
 |------------|--------|--------|
 | LightGBM   | 0.123  | 0.85   |
 | CatBoost   | 0.119  | 0.87   |
 | XGBoost    | 0.122  | 0.86   |
-
----
-
-## 📈 Sample Plots
-
-**Predicted vs Actual Prices:**
-
-![Predictions](notebooks/images/predictions_example.png)
-
-**Feature Importance:**
-
-![Feature Importance](notebooks/images/feature_importance.png)
 
 ---
 
