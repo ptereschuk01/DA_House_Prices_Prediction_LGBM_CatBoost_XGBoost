@@ -1,49 +1,42 @@
 # DA House Prices Prediction (LGBM, CatBoost, XGBoost)
 
-📊 **A complete ML project for predicting house prices using ensemble gradient boosting models.**
-
-![Header Image](notebooks/images/project_header.png)
+📊 A project for predicting house prices using ensemble gradient boosting models (LightGBM, CatBoost, XGBoost).
 
 ---
 
-## 🧠 Project Description
+## 🧠 Description
 
-This repository contains a complete machine learning project focused on regression: predicting house prices. The workflow includes:
+This repository contains a complete ML project for solving a regression problem: predicting house prices. The project includes:
 
-- **Data Analysis (EDA)** — exploring distributions, correlations, and visual patterns
-- **Feature Engineering** — handling missing data, creating new features, encoding categorical variables
-- **Model Training** — LightGBM, CatBoost, XGBoost with hyperparameter tuning
-- **Evaluation & Visualization** — comparing models and visualizing predictions
+- Data preparation and analysis (EDA)
+- Handling missing values and creating new features
+- Training and comparing multiple models (LightGBM, CatBoost, XGBoost)
+- Visualizing results and evaluating model performance
 
-Goal: build a high-accuracy model and document the full ML workflow with clear visuals.
+The goal is to build a high-accuracy prediction model and document the entire ML workflow.
 
 ---
 
-## 🧾 Repository Structure
+## 🧾 Contents
 
-```
-DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/
-├─ data/raw/                # Raw train/test data
-├─ notebooks/               # Jupyter notebooks with EDA, modeling, and visualizations
-│   ├─ images/              # Sample plots and figures for README and analysis
-├─ requirements.txt         # Python dependencies
-├─ README.md                # Project description
-└─ .gitignore
-```
+- 📁 **data/raw/** — raw data (train/test)  
+- 📄 **notebooks/** — Jupyter notebooks with analysis, model training, and visualizations  
+- 📄 **requirements.txt** — Python project dependencies  
+- 📄 **.gitignore** — Git ignore file
 
 ---
 
 ## 🚀 Installation
 
-1. Clone the repository:
+1. Clone the repository:  
 ```bash
 git clone https://github.com/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost.git
 ```
-2. Navigate to the project folder:
+2. Go to the project folder:  
 ```bash
 cd DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost
 ```
-3. Create a virtual environment (recommended):
+3. Create a virtual environment (recommended):  
 ```bash
 python -m venv venv
 # Linux/Mac
@@ -51,14 +44,14 @@ source venv/bin/activate
 # Windows
 venv\Scripts\activate
 ```
-4. Install dependencies:
+4. Install dependencies:  
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🛠 How to Use
+## 🛠 Usage
 
 Open and run notebooks in the **notebooks/** directory:
 ```bash
@@ -66,20 +59,21 @@ jupyter notebook
 ```
 
 Workflow steps:
+
 1. **EDA** — data exploration, visualization of distributions and correlations
 2. **Feature Engineering** — create new features, handle missing values, encode categoricals
-3. **Model Training & Tuning** — train LightGBM, CatBoost, XGBoost, optimize hyperparameters
+3. **Model Training & Tuning** — train LightGBM, CatBoost, XGBoost, tune hyperparameters
 4. **Evaluation & Comparison** — compute RMSE, R², visualize predictions
 
 ---
 
 ## 📊 Model Comparison
 
-| Model      | RMSE   | R²     | Visualization |
-|------------|--------|--------|---------------|
-| LightGBM   | 0.123  | 0.85   | ![LightGBM](notebooks/images/lightgbm_plot.png) |
-| CatBoost   | 0.119  | 0.87   | ![CatBoost](notebooks/images/catboost_plot.png) |
-| XGBoost    | 0.122  | 0.86   | ![XGBoost](notebooks/images/xgboost_plot.png) |
+| Model      | RMSE   | R²     |
+|------------|--------|--------|
+| LightGBM   | 0.123  | 0.85   |
+| CatBoost   | 0.119  | 0.87   |
+| XGBoost    | 0.122  | 0.86   |
 
 ---
 
@@ -122,22 +116,3 @@ jupyter
 - Matplotlib & Seaborn
 
 ---
-
-## ✍️ Author
-
-👤 Pavlo Tereshchuk (ptereschuk01)
-
-Demonstrates Data Science and ML skills for regression tasks.
-
----
-
-## 📜 License
-
-MIT License *(if applicable)*
-
----
-
-## ☁️ Google Colab
-
-Run the project in Colab directly from GitHub:
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/blob/main/notebooks/EDA_and_Modeling.ipynb)
