@@ -1,0 +1,39 @@
+# production-ready environment.yml, полностью согласованный с requirements.txt и окружением data_ml.
+
+name: data_ml
+
+channels:
+
+* conda-forge
+* defaults
+
+dependencies:
+
+* python=3.11
+
+# Core
+
+* numpy
+* pandas
+
+# Visualization
+
+* matplotlib
+* seaborn
+
+# Machine Learning
+
+* scikit-learn
+
+# Notebooks
+
+* jupyter
+* notebook
+
+# Pip-only packages
+
+* pip
+* pip:
+
+  * catboost
+  * lightgbm
