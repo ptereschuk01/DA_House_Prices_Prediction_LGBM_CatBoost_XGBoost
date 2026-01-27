@@ -2,6 +2,12 @@
 
  [A project for predicting house prices using ensemble gradient boosting models.ipynb](https://github.com/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/blob/main/notebooks/House_7_Prices_Prediction_LGBM_CatBoost_XGBoost.ipynb)
 
+
+Ziel dieses Projekts ist die vertiefte Analyse ausgewählter Modelle sowie deren Ensemble-Ansätze.
+
+Das Projekt befindet sich derzeit noch in Bearbeitung und ist nicht vollständig abgeschlossen.
+
+Der Fokus liegt auf dem systematischen Vergleich der Modelle, deren Evaluation sowie der Analyse der Modellleistung anhand geeigneter Metriken.
 ---
 
 ##  Description
