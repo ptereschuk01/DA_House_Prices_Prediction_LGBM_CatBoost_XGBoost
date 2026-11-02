@@ -1,128 +1,68 @@
-# DA House Prices Prediction (LGBM, CatBoost, XGBoost)
+# Immobilienpreisprognose mit Gradient Boosting
 
- [A project for predicting house prices using ensemble gradient boosting models.ipynb](https://github.com/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost/blob/main/notebooks/House_7_1_Prices_Prediction_LGBM_CatBoost_XGBoost.ipynb)
+Vergleich von LightGBM, CatBoost und XGBoost auf dem Kaggle-Datensatz **House Prices — Advanced Regression Techniques**. Ziel ist, die Datenaufbereitung, das Verhalten unterschiedlicher Modelle und mögliche Ensemble-Ansätze nachvollziehbar zu untersuchen.
 
+**Status:** Die Analyse wird weiterentwickelt. Das Repository enthält Notebook, Ausgangsdaten und eine erzeugte Submission-Datei.
 
-Ziel dieses Projekts ist die vertiefte Analyse ausgewählter Modelle sowie deren Ensemble-Ansätze.
+[Analyse-Notebook öffnen](notebooks/House_7_1_Prices_Prediction_LGBM_CatBoost_XGBoost.ipynb)
 
-Das Projekt befindet sich derzeit noch in Bearbeitung und ist nicht vollständig abgeschlossen.
+## Vorgehen
 
-Der Fokus liegt auf dem systematischen Vergleich der Modelle, deren Evaluation sowie der Analyse der Modellleistung anhand geeigneter Metriken.
+1. Trainingsdaten laden und numerische sowie kategoriale Merkmale unterscheiden.
+2. Fehlende Werte behandeln und Kategorien für LightGBM/XGBoost per One-Hot-Encoding aufbereiten.
+3. Die Zielgröße `SalePrice` mit `log1p` transformieren.
+4. LightGBM, CatBoost und XGBoost mit fünf Validierungsfaltungen vergleichen.
+5. Merkmalsbedeutung und ausgewählte Hyperparameter untersuchen.
+6. Einfache und gewichtete Modellkombinationen erproben und Vorhersagen exportieren.
 
----
+## Gespeicherte Ergebnisse
 
-##  Description
+Die folgende Tabelle übernimmt die im Notebook gespeicherten Ausgaben der fünffachen Kreuzvalidierung. Die Werte wurden für diese Dokumentationsüberarbeitung nicht neu berechnet.
 
-This repository contains a complete ML project for solving a regression problem: predicting house prices. The project includes:
+| Modell | Mittlerer RMSE auf log1p(SalePrice) |
+| --- | ---: |
+| CatBoost | 0.1274 |
+| LightGBM | 0.1356 |
+| XGBoost | 0.1404 |
 
-- Data preparation and analysis (EDA)
-- Handling missing values and creating new features
-- Training and comparing multiple models (LightGBM, CatBoost, XGBoost)
-- Visualizing results and evaluating model performance
+Die Werte beziehen sich auf die logarithmierte Zielgröße, nicht auf einen Fehlerbetrag in Euro oder Dollar.
 
-The goal is to build a high-accuracy prediction model and document the entire ML workflow.
+### Einordnung der Validierung
 
----
+Bei LightGBM und XGBoost erfolgt die Vorverarbeitung derzeit vor der Aufteilung in Validierungsfaltungen. Damit fließen Informationen über die Verteilung der späteren Validierungsdaten in die Vorverarbeitung ein. Für einen belastbaren Vergleich muss die Vorverarbeitung innerhalb jeder Trainingsfaltung angepasst werden.
 
-## Contents
+Die später im Notebook ausgegebenen Ensemble-RMSE werden auf den Trainingsdaten berechnet. Sie sind kein Nachweis für die Vorhersagequalität auf unbekannten Daten. Ein Vergleich anhand von Out-of-Fold-Vorhersagen bleibt offen.
 
--  **data/raw/** — raw data (train/test)  
--  **notebooks/** — Jupyter notebooks with analysis, model training, and visualizations  
--  **requirements.txt** — Python project dependencies  
--  **.gitignore** — Git ignore file
+## Dateien
 
+| Pfad | Inhalt |
+| --- | --- |
+| `data/raw/` | Trainings-, Test- und Beispieldaten |
+| `docs/data_description.txt` | Beschreibung der Merkmale |
+| `notebooks/` | Analyse und gespeicherte Submission |
+| `requirements.txt` | Auflistung der Python-Abhängigkeiten |
 
-├─ data/
+## Lokal öffnen
 
-│   ├─ raw/         # Original train/test datasets
+Nach dem Klonen des Repositorys eine Python-Umgebung aktivieren und die Abhängigkeiten installieren:
 
-│   └─ processed/   # Cleaned and feature-engineered datasets
-
-├─ notebooks/       # Jupyter notebooks with analysis and modeling
-
-├─ requirements.txt # Python dependencies
-
-├─ README.md        # Project description
-
-└─ .gitignore
-```
----
-
-## 🚀 Installation
-
-1. Clone the repository:  
 ```bash
-git clone https://github.com/ptereschuk01/DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost.git
-```
-2. Go to the project folder:  
-```bash
-cd DA_House_Prices_Prediction_LGBM_CatBoost_XGBoost
-```
-3. Create a virtual environment (recommended):  
-```bash
-python -m venv venv
-# Linux/Mac
-source venv/bin/activate
-# Windows
-venv\Scripts\activate
-```
-4. Install dependencies:  
-```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+python -m pip install xgboost
+python -m notebook
 ```
 
----
+XGBoost wird vom Notebook benötigt, fehlt aber derzeit in `requirements.txt`. Die dort genannten Pakete sind nicht auf bestimmte Versionen festgelegt.
 
-##  Usage
+Das Notebook im Verzeichnis `notebooks/` öffnen. Die vorhandenen Datenpfade verwenden Windows-Schreibweise; für andere Betriebssysteme sind sie anzupassen.
 
-Open and run notebooks in the **notebooks/** directory:
-```bash
-jupyter notebook
-```
+## Nächste fachliche Schritte
 
-Workflow steps:
+- Vorverarbeitung innerhalb der jeweiligen Validierungsfaltung ausführen.
+- Trainings- und Testtransformationen konsistent über dieselben angepassten Verarbeitungsschritte anwenden.
+- Ensembles mit Out-of-Fold-Vorhersagen beurteilen.
+- Umgebung und endgültigen Modellvergleich reproduzierbar dokumentieren.
 
-1. **EDA** — data exploration, visualization of distributions and correlations
-2. **Feature Engineering** — create new features, handle missing values, encode categoricals
-3. **Model Training & Tuning** — train LightGBM, CatBoost, XGBoost, tune hyperparameters
-4. **Evaluation & Comparison** — compute RMSE, R², visualize predictions
+**Technologien:** Python · pandas · NumPy · scikit-learn · LightGBM · CatBoost · XGBoost · matplotlib · seaborn
 
----
-
-##  Model Comparison
-
-| Model      | RMSE   | R²     |
-|------------|--------|--------|
-| LightGBM   | 0.123  | 0.85   |
-| CatBoost   | 0.119  | 0.87   |
-| XGBoost    | 0.122  | 0.86   |
-
----
-
-## 📦 Dependencies
-
-```
-pandas
-numpy
-scikit-learn
-lightgbm
-catboost
-xgboost
-matplotlib
-seaborn
-jupyter
-```
-
-*(Exact versions listed in `requirements.txt`)*
-
----
-
-## 🏷 Technologies
-
-- Python 3.x  
-- Jupyter Notebook  
-- Scikit-Learn, LightGBM, CatBoost, XGBoost  
-- Pandas, NumPy  
-- Matplotlib & Seaborn
-
----
+[Gesamtes Portfolio](https://github.com/ptereschuk01)
